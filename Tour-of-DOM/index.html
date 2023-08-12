@@ -13,6 +13,7 @@
     }
     .important-place{
       color: blueviolet;
+      /* background-color: aquamarine; */
     }
   </style>
   <title>Tour Of DOM</title>
@@ -22,7 +23,8 @@
     <h1>Welcome to my DOM</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit nobis corrupti blanditiis minus! Blanditiis facere, possimus sunt at aperiam iusto tenetur temporibus harum ipsam, dicta suscipit, molestiae necessitatibus nam!</p>
   </header>
-  <main>
+  <main id="main-container">
+   <section>
     <h1>My Awesome DOM de baba</h1>
     <ul>
       <li>Jalali</li>
@@ -30,20 +32,23 @@
       <li>Bonobash</li>
       <li>Dom de re baba</li>
     </ul>
+   </section>
     <section class="fruits-container">
-      <h1 id="fruits-title">Fruits I like</h1>
+      <h1 id="fruits-title" class="some-class random">Fruits I like</h1>
       <ul>
         <li>Apple</li>
         <li>Banana</li>
         <li>Carrot</li>
       </ul>
     </section>
-    <section>
+    <section id="places-container" class="large-text">
+     <ul id="places-list">
       <h1 id="places-title">Places I like to visit</h1>
       <li class="important-place">Sundorbon</li>
       <li class="important-place">Bandoebon</li>
       <li class="important-place">Katabon</li>
       <li class="other-place">Shalbon</li>
+     </ul>
     </section>
   </main>
   
@@ -67,7 +72,7 @@
   const places = document.getElementsByClassName('important-place');
   console.log(places);
   for (const place of places) {
-    console.log(place.innerText);
+    // console.log(place.innerText);
   } 
 
 //  querySelectorAll
@@ -75,9 +80,11 @@
 const someLi = document.querySelectorAll('.fruits-container li');
 console.log(someLi);
 for(const li of someLi){
-  console.log(li.innerText)
+  // console.log(li.innerText)
 }
 
   </script>
+  <script src="JS/append.js"></script>
+  <script src="JS/stylein.js"></script>
 </body>
 </html>
