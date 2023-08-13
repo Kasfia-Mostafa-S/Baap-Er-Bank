@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add new comment</title>
+</head>
+<body>
+  <h1>PLease ad your comment</h1>
+  <div id="comment-container">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ducimus rem, hic facere architecto perferendis mollitia, nesciunt alias vitae veniam suscipit ipsa animi iusto aliquam inventore ullam earum a tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim quae accusamus sequi autem vitae ullam tenetur asperiores voluptatem harum!</p>
+    <p>Eveniet nemo esse quod. Velit placeat laborum iusto aliquid. Est possimus pariatur, vero reiciendis voluptatem suscipit recusandae unde rerum illum qui atque dicta architecto eum ipsa optio, minus quam Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus mollitia beatae labore, hic accusantium laboriosam perferendis iure. Veritatis, cum explicabo.</p>
+    <p>Quisquam facere pariatur illo rem! Debitis ut corrupti similique ad reiciendis! Exercitationem accusantium quam amet, similique quis placeat laborum alias ex ipsum. Illo ex maiores dolore quod recusandae aliquam Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo cumque officia ratione iusto maxime accusantium itaque sint dolor impedit adipisci.</p>
+  </div>
+  <div>
+    <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+    <br>
+    <button id="btn-post">Post</button>
+  </div>
+  <script>
+    document.getElementById('btn-post').addEventListener('click',function(){
+      // get comment
+      const commentBox = document.getElementById('new-comment');
+      const newComment = commentBox.value;
+
+      
+      const commentContainer = document.getElementById('comment-container');
+      const p = document.createElement('p');
+      p.innerText = newComment;
+      commentContainer.appendChild(p);
+
+      // clear
+      commentBox.value = '';
+    })
+  </script>
+</body>
+</html>
