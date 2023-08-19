@@ -32,7 +32,53 @@ function calculateRectangleArea(){
   const length = parseFloat(lengthValueText);
   // console.log(length);
 
+  // validation
+  if(isNaN(width) || isNaN(length)){
+    alert('Provide a number');
+    return;
+  }
+
   const area = width * length;
   const rectangleAreaSpan = document.getElementById('rectangle-area');
   rectangleAreaSpan.innerText = area;
+}
+
+
+// reusable function --> reduce code
+
+function calculateParallelogramArea(){
+   const base = getInputValue('parallelogram-base');
+
+   const height = getInputValue('parallelogram-height');
+  
+   if(isNaN(base) || isNaN(height)){
+    alert('Provide a number');
+    return;
+  }
+
+   const area = base * height;
+   setElementInnerText('parallelogram-area',area);
+}
+
+function calculateEllipseArea(){
+   const majorRadius = getInputValue('ellipse-first-radius')
+   const minorRadius = getInputValue('ellipse-second-radius');
+
+   const area = 3.14 * majorRadius * minorRadius;
+   const areaTwoDecimal = area.toFixed(2);
+   setElementInnerText('ellipse-area',areaTwoDecimal)
+}
+
+function getInputValue(fieldId){
+  const inputField = document.getElementById(fieldId);
+  const inputValueText = inputField.value;
+  const value = parseFloat(inputValueText);
+  return value;
+}
+
+// reusable function
+
+function setElementInnerText(elementId,area){
+ const element = document.getElementById(elementId);
+ element.innerText = area;
 }
